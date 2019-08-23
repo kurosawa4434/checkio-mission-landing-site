@@ -1,0 +1,80 @@
+
+<p style="font-style: italic; text-align: center;">
+That's one small step for [a] man, one giant leap for mankind.<br>
+Neil Alden Armstrong (1930-2012)
+
+</p>
+
+<p>
+The size of the hexagonal grid is 12x9 ('A1' to 'L9') with this mission.
+</p>
+<ul>
+    <li>It’s characteristics:
+        <ul>
+            <li>the alphabet letters represent columns and numbers represent rows;</li>
+            <li>it’s flat topped;</li>
+            <li>the even columns are being shoved down.</li>
+        </ul>
+    </li>
+</ul>
+
+<p>
+You are given a set of obstacle hexes on the moon as input value.
+You have to return a set of all candidates for the landing site.
+</p>
+
+<ul>
+    <li>The conditions of landing site hex:
+        <ul>
+            <li>The hex isn't obstacle hex.</li>
+            <li>No obstacle hexes in equidistant ( 1 or more ) hexes.</li>
+            <li>The above radius is the longest.</li>
+        </ul>
+    </li>
+</ul>
+
+
+<strong>NOTE:</strong>
+<ul>
+    <li>Outside the hexgonal grid is always considered an obstacle hex.</li>
+    <li>If there is no landing site, return the empty set.</li>
+</ul>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+<!-- Do NOT change the indentation of this pre-block -->
+<pre class="brush: python">assert landing_site({'E5', 'E7', 'F4', 'F6', 'G4', 'G6', 'H3', 'H5'}) == {'C3', 'J7'}
+assert landing_site({'A4', 'C2', 'C6', 'C9', 'D4', 'D7', 'F1', 'F5',
+                     'F8', 'G4', 'H7', 'I2', 'I5', 'I9', 'K3', 'K8', 'L5'}) == {'B7', 'E3', 'J6'}
+</pre>
+<!-- pre-block end -->
+    <p style="text-align: center;">
+        <img src="{{MEDIA}}example_01.png" style="max-height: 294px; margin: 10px;">
+        <img src="{{MEDIA}}example_02.png" style="max-height: 294px; margin: 10px;">
+    </p>
+</div>
+
+<p>
+    <strong>Input: </strong>
+    obstacles on the moon (set of string)
+</p>
+
+<p>
+    <strong>Output: </strong>
+    a set of all candidates for the landing site (set of string)
+</p>
+
+<p>
+    <strong>Precondition:</strong>
+</p>
+<ul>
+    <li>all(re.fullmatch('[A-L][1-9]', i) for i in input)</li>
+</ul>
+<p>
+    <strong>How it is used:</strong>
+    You can find the area you need.
+</p>
