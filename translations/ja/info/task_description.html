@@ -1,0 +1,79 @@
+<p style="font-style: italic; text-align: center;">
+これは一人の人間にとっては小さな一歩だが、人類にとっては偉大な飛躍である。<br>
+ニール・オールデン・アームストロング (1930-2012)
+
+</p>
+
+<p>
+    このミッションでは 12x9 (A1 から L9) の六角形の升目(ヘクス)を使います。
+</p>
+<ul>
+    <li>その仕様は:
+        <ul>
+            <li>平面が上</li>
+            <li>アルファベットが列、数字が行を表す</li>
+            <li>偶数の列が下に突出</li>
+        </ul>
+    </li>
+</ul>
+
+<p>
+    入力値として月面の障害物ヘクスの集合(set)が与えられます。
+   着陸地点の候補となる全てのヘクスを集合(set)として返して下さい。
+</p>
+
+<ul>
+    <li>着陸候補ヘクスの条件:
+        <ul>
+            <li>障害物ヘクスでないこと</li>
+            <li>等距離 (1以上) のヘクスに障害物ヘクスがないこと</li>
+            <li>上記の半径が最長であること</li>
+        </ul>
+    </li>
+</ul>
+
+
+<strong>注意:</strong>
+<ul>
+    <li>12x9 の升目の外側は常に障害物ヘクスと想定します</li>
+    <li>もし着陸候補ヘクスが無ければ空の集合(set())を返すこと</li>
+</ul>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>例:</strong>
+    </p>
+<!-- Do NOT change the indentation of this pre-block -->
+<pre class="brush: python">assert landing_site({'E5', 'E7', 'F4', 'F6', 'G4', 'G6', 'H3', 'H5'}) == {'C3', 'J7'}
+assert landing_site({'A4', 'C2', 'C6', 'C9', 'D4', 'D7', 'F1', 'F5',
+                     'F8', 'G4', 'H7', 'I2', 'I5', 'I9', 'K3', 'K8', 'L5'}) == {'B7', 'E3', 'J6'}
+</pre>
+<!-- pre-block end -->
+    <p style="text-align: center;">
+        <img src="{{MEDIA}}example_01.png" style="max-height: 294px; margin: 10px;">
+        <img src="{{MEDIA}}example_02.png" style="max-height: 294px; margin: 10px;">
+    </p>
+</div>
+
+<p>
+    <strong>入力: </strong>
+    月面の障害物ヘクス (文字列の集合)
+</p>
+
+<p>
+    <strong>出力: </strong>
+    全ての着陸候補ヘクス (文字列の集合)
+</p>
+
+<p>
+    <strong>前提条件:</strong>
+</p>
+<ul>
+    <li>all(re.fullmatch('[A-L][1-9]', i) for i in input)</li>
+</ul>
+<p>
+    <strong>どのように使われるか:</strong>
+    必要とする領域を見つけることができます
+</p>
