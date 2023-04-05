@@ -30,7 +30,7 @@ def landing_site_make_random_tests(num):
         while next_hexes:
             for nx in set(next_hexes):
                 adj_hexes = (adjacent_hexes(nx)-{None}) & rest_hexes
-                next_hexes |= set(sample(adj_hexes, randint(0, min(3, len(adj_hexes)))))
+                next_hexes |= set(sample(list(adj_hexes), randint(0, min(3, len(adj_hexes)))))
             next_hexes -= done_hexes
             done_hexes |= next_hexes
         return done_hexes, set(chain(*[list(adjacent_hexes(dx)-{None}-done_hexes) for dx in done_hexes]))
